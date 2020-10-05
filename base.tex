@@ -1,0 +1,47 @@
+\usepackage[utf8]{inputenc}
+\usepackage{environ}
+\usepackage[bookmarks]{hyperref}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{bm}
+\usepackage{cancel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[pdftex]{graphicx}
+\usepackage{wrapfig}
+\usepackage{adjustbox}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage[numbers,compress]{natbib}
+\usepackage{etoolbox}
+\usepackage{booktabs}
+
+%% natbib settings
+\renewcommand{\bibname}{References}
+\bibliographystyle{plainnat}
+
+%% Text highlights
+\newcommand{\info}[1]{\textcolor{ForestGreen}{\textbf{#1}}}
+\newcommand{\warn}[1]{\textcolor{RedOrange}{\textbf{#1}}}
+
+%% Skip spacing around equation display (use inside document environment).
+\newcommand{\displayskip}[1]{
+  \setlength{\abovedisplayskip}{#1}
+  \setlength{\belowdisplayskip}{#1}
+  \setlength{\abovedisplayshortskip}{#1}
+  \setlength{\belowdisplayshortskip}{#1}
+}
+
+%%
+% Conference specific toggles when needed.
+% Usage: \iftoggle{name}{true}{false}
+%
+\newtoggle{icml} \togglefalse{icml}
+\newtoggle{neurips} \togglefalse{neurips}
+\newtoggle{aistats} \togglefalse{aistats}
+
+%% Notations
+\newcommand{\dset}{\mathcal{D}} % Dataset
+\newcommand{\gp}{\mathcal{GP}}  % GP
+\newcommand{\kl}{\mathcal{KL}}  % KL-divergence
+\newcommand{\xvec}{\mathbf{x}}  % vector x
+\newcommand{\yvec}{\mathbf{y}}  % vector y
+\newcommand{\Xvec}{\mathbf{X}}  % vector X (caps)
+\newcommand{\Yvec}{\mathbf{Y}}  % vector Y (caps)
