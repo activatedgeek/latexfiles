@@ -1,25 +1,18 @@
 \usepackage[utf8]{inputenc}
-\usepackage{environ}
+\usepackage[english]{babel}
+\usepackage[margin=1in]{geometry}
+\usepackage{etoolbox}
 \usepackage[bookmarks]{hyperref}
-\usepackage{amsfonts,amsmath,amssymb}
-\usepackage{bm}
-\usepackage{cancel}
-\usepackage[dvipsnames]{xcolor}
-\usepackage[pdftex]{graphicx}
+\usepackage{booktabs}
 \usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsfonts,amsmath,amssymb,bm,cancel}
+\usepackage[pdftex]{graphicx}
 \usepackage{adjustbox}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{minted}
 \usepackage[numbers,compress]{natbib}
-\usepackage{etoolbox}
-\usepackage{booktabs}
-
-%% natbib settings
-\renewcommand{\bibname}{References}
-\bibliographystyle{plainnat}
-
-%% Text highlights
-\newcommand{\info}[1]{\textcolor{ForestGreen}{\textbf{#1}}}
-\newcommand{\warn}[1]{\textcolor{RedOrange}{\textbf{#1}}}
 
 %% Skip spacing around equation display (use inside document environment).
 \newcommand{\displayskip}[1]{
@@ -36,6 +29,14 @@
 \newtoggle{icml} \togglefalse{icml}
 \newtoggle{neurips} \togglefalse{neurips}
 \newtoggle{aistats} \togglefalse{aistats}
+
+%% Text highlights.
+\newcommand{\info}[1]{\textcolor{ForestGreen}{\textbf{#1}}}
+\newcommand{\warn}[1]{\textcolor{RedOrange}{\textbf{#1}}}
+
+%% natbib settings
+\renewcommand{\bibname}{References}
+\bibliographystyle{plainnat}
 
 %% Notations
 \newcommand{\dset}{\mathcal{D}} % Dataset
