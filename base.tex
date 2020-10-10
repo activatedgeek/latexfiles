@@ -11,8 +11,10 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{adjustbox}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
-\usepackage{minted}
+\usepackage[newfloat]{minted}
+\usepackage{caption}
 \usepackage[numbers,compress]{natbib}
+\usepackage{tikz}
 
 %% Skip spacing around equation display (use inside document environment).
 \newcommand{\displayskip}[1]{
@@ -21,6 +23,10 @@
   \setlength{\abovedisplayshortskip}{#1}
   \setlength{\belowdisplayshortskip}{#1}
 }
+
+%% TikZ settings
+\usetikzlibrary{positioning,arrows.meta,quotes,shapes,bayesnet}
+\tikzset{>=latex}
 
 %%
 % Conference specific toggles when needed.
@@ -38,11 +44,18 @@
 \renewcommand{\bibname}{References}
 \bibliographystyle{plainnat}
 
+%% Wrapping minted code listings
+\newenvironment{code}{\captionsetup{type=listing}}{}
+
 %% Notations
-\newcommand{\dset}{\mathcal{D}} % Dataset
+\newcommand{\dset}{\mathcal{D}}  % Dataset
 \newcommand{\gp}{\mathcal{GP}}  % GP
 \newcommand{\kl}{\mathcal{KL}}  % KL-divergence
+\newcommand{\gaussian}[1]{\mathcal{N}\left(#1\right)}  % Gaussian
 \newcommand{\xvec}{\mathbf{x}}  % vector x
 \newcommand{\yvec}{\mathbf{y}}  % vector y
 \newcommand{\Xvec}{\mathbf{X}}  % vector X (caps)
 \newcommand{\Yvec}{\mathbf{Y}}  % vector Y (caps)
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}  % norm
+\newcommand{\ci}{\mathrel{\perp\mspace{-10mu}\perp}}  % conditional independence
+\newcommand{\nci}{\centernot{\ci}}  % cancelled conditional independence
