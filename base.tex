@@ -2,19 +2,21 @@
 \usepackage[english]{babel}
 \usepackage[margin=1in]{geometry}
 \usepackage{etoolbox}
-\usepackage[bookmarks]{hyperref}
 \usepackage{booktabs}
 \usepackage{wrapfig}
 \usepackage{enumitem}
 \usepackage[dvipsnames]{xcolor}
-\usepackage{amsfonts,amsmath,amssymb,bm,cancel}
+\usepackage{amsfonts,amsmath,amssymb,bm,cancel,mathtools}
 \usepackage[pdftex]{graphicx}
 \usepackage{adjustbox}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{listings}
 \usepackage[newfloat]{minted}
 \usepackage{caption}
 \usepackage[numbers,compress]{natbib}
 \usepackage{tikz}
+\usepackage{verbatim,fancyvrb}
+\usepackage[bookmarks]{hyperref}
 
 %% Skip spacing around equation display (use inside document environment).
 \newcommand{\displayskip}[1]{
@@ -47,15 +49,25 @@
 %% Wrapping minted code listings
 \newenvironment{code}{\captionsetup{type=listing}}{}
 
-%% Notations
-\newcommand{\dset}{\mathcal{D}}  % Dataset
-\newcommand{\gp}{\mathcal{GP}}  % GP
-\newcommand{\kl}{\mathcal{KL}}  % KL-divergence
-\newcommand{\gaussian}[1]{\mathcal{N}\left(#1\right)}  % Gaussian
-\newcommand{\xvec}{\mathbf{x}}  % vector x
-\newcommand{\yvec}{\mathbf{y}}  % vector y
-\newcommand{\Xvec}{\mathbf{X}}  % vector X (caps)
-\newcommand{\Yvec}{\mathbf{Y}}  % vector Y (caps)
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}  % norm
-\newcommand{\ci}{\mathrel{\perp\mspace{-10mu}\perp}}  % conditional independence
-\newcommand{\nci}{\centernot{\ci}}  % cancelled conditional independence
+%% Symbols
+\newcommand{\mbf}[1]{{\ensuremath{\boldsymbol{\mathbf{#1}}}}}  % bold math
+\newcommand{\vrb}[1]{\Verb+#1+}  % verbatim
+
+\newcommand{\defeq}{\ensuremath{\triangleq}}  % definition
+\newcommand{\determ}[1]{\ensuremath{\left\lvert#1\right\rvert}}  % determinant
+\newcommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}  % norm
+\newcommand{\ci}{\ensuremath{\mathrel{\perp\mspace{-10mu}\perp}}}  % conditional independence
+\newcommand{\nci}{\ensuremath{\cancel{\ci}}}  % conditional dependence
+
+\newcommand{\gp}{\ensuremath{\mathcal{GP}}}  % GP
+\newcommand{\kl}{\ensuremath{\mathcal{KL}}}  % KL-divergence
+\newcommand{\gaussian}[1]{\ensuremath{\mathcal{N}\left(#1\right)}}  % Gaussian
+\newcommand{\tr}[1]{\text{tr}\ensuremath{\left(#1\right)}}
+\newcommand{\pd}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+
+%% Variables
+\newcommand{\dset}{\ensuremath{\mathcal{D}}}  % Dataset
+\newcommand{\xvec}{\mbf{x}}  % vector x
+\newcommand{\yvec}{\mbf{y}}  % vector y
+\newcommand{\Xvec}{\mbf{X}}  % vector X (caps)
+\newcommand{\Yvec}{\mbf{Y}}  % vector Y (caps)
