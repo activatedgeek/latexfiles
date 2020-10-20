@@ -14,6 +14,7 @@
 \item Bold symbols \vrb{\mbf{}}: \mbf{\Sigma}, \mbf{X}, $\dots$
 \item Definition \vrb{\defeq}: \defeq
 \item Determinant \vrb{\determ{}}: \determ{\cdot}
+\item logdet \vrb{\logdet{}}: \logdet{\cdot}
 \item Norm \vrb{\norm{}}: \norm{\cdot}
 \item Conditional independence \vrb{\ci},\vrb{\nci}: \ci, \nci
 \item Gaussian Process \vrb{\gp}: \gp
@@ -30,5 +31,19 @@
 \inputminted[firstline=1,lastline=2,fontsize=\small]{python}{test.py}
 \end{code}
 
+\section{SVGs}
+
+\vrb{\includesvg{}} may or may not work. Alternatively, convert to PDF which
+works reliably with Altair charts.
+
+\begin{figure}[ht]
+    \centering
+    \begin{tabular}{cc}
+        \includesvg[width=0.15\linewidth]{favicon} & \includegraphics[width=0.15\linewidth]{favicon.pdf} \\
+        (a) & (b)
+    \end{tabular}
+    \caption{SVG loaded from a (a) \texttt{.svg} and a (b) \texttt{.pdf} file.}
+    \label{fig:svg_pdf}
+\end{figure}
 
 \end{document}
