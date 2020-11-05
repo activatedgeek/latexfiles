@@ -1,6 +1,7 @@
 \documentclass{article}
+\usepackage[margin=1in]{geometry}
 
-\input{base}
+\input{preamble}
 
 \title{Example \LaTeX{ }file}
 \author{Sanyam Kapoor}
@@ -21,7 +22,7 @@
 \item KL-divergence \vrb{\kl}: \kl
 \item Gaussian distribution \vrb{\gaussian{}}: \gaussian{\cdot, \cdot}
 \item Trace \vrb{\tr{}}: \tr{\cdot}
-\item Partial derivative \vrb{\pd{}{}}: \pd{f(x)}{x}
+\item Partial derivative \vrb{\pd{}{}}: \pd{f}{x}(x)
 \end{enumerate}
 
 \section{Code Snippets}
@@ -42,8 +43,17 @@ works reliably with Altair charts.
         \includesvg[width=0.15\linewidth]{favicon} & \includegraphics[width=0.15\linewidth]{favicon.pdf} \\
         (a) & (b)
     \end{tabular}
-    \caption{SVG loaded from a (a) \texttt{.svg} and a (b) \texttt{.pdf} file.}
+    \caption{SVG loaded from a (a) \texttt{.svg} file, and as a (b) \texttt{.pdf} file.}
     \label{fig:svg_pdf}
 \end{figure}
+
+\section{Adding References}
+
+References \vrb{\citet{kapoor2020variational}}: \citet{kapoor2020variational}
+
+\clearpage
+
+% \bibliographystyle{plainnat}
+\bibliography{refs}
 
 \end{document}
