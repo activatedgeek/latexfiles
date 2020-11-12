@@ -3,6 +3,8 @@
 
 \input{preamble}
 
+\setlength{\parindent}{0em}
+
 \title{Example \LaTeX{ }file}
 \author{Sanyam Kapoor}
 
@@ -34,8 +36,7 @@
 
 \section{SVGs}
 
-\vrb{\includesvg{}} may or may not work. Alternatively, convert to PDF which
-works reliably with Altair charts.
+\vrb{\includesvg{}} may or may not work. Alternatively, convert to PDF which works reliably with Altair charts. See \figref{fig:svg_pdf}.
 
 \begin{figure}[ht]
     \centering
@@ -47,9 +48,17 @@ works reliably with Altair charts.
     \label{fig:svg_pdf}
 \end{figure}
 
-\section{Adding References}
+\section{Equations, Citations, Figures}
 
-References \vrb{\citet{kapoor2020variational}}: \citet{kapoor2020variational}
+References work with \vrb{\citet{kapoor2020variational}}, rendered as \citet{kapoor2020variational}.
+
+\begin{align}
+p(\theta \mid \xvec) = \frac{p(\xvec\mid\theta)p(\theta)}{p(\xvec)} \label{eq:bayesrule}
+\end{align}
+
+Equations can be referred as \vrb{\eqref{eq:bayesrule}}, rendered as \eqref{eq:bayesrule}.
+
+Similarly, figures are referred as \vrb{\figref{fig:svg_pdf}}, rendered as \figref{fig:svg_pdf}.
 
 \clearpage
 
