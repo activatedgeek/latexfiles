@@ -17,6 +17,7 @@
 \usepackage{tikz}
 \usepackage{verbatim,fancyvrb}
 \usepackage[bookmarks]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
 
 %% Skip spacing around equation display (use inside document environment).
 \newcommand{\displayskip}[1]{
@@ -30,6 +31,10 @@
 \usetikzlibrary{positioning,arrows.meta,quotes,shapes,bayesnet}
 \tikzset{>=latex}
 
+%% Cleveref settings
+\crefname{equation}{}{}
+\Crefname{equation}{}{}
+
 %%
 % Conference specific toggles when needed.
 % Usage: \iftoggle{name}{true}{false}
@@ -41,9 +46,6 @@
 %% Text highlights.
 \newcommand{\info}[1]{\textcolor{ForestGreen}{\textbf{#1}}}
 \newcommand{\warn}[1]{\textcolor{RedOrange}{\textbf{#1}}}
-
-%% Figure reference.
-\newcommand{\figref}[1]{\figurename~\ref{#1}}
 
 %% natbib settings
 \renewcommand{\bibname}{References}
