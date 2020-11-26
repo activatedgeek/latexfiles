@@ -1,10 +1,6 @@
 \documentclass{article}
-
 \input{preamble}
-
 \usepackage[margin=1in]{geometry}
-
-
 
 \setlength{\parindent}{0em}
 
@@ -12,6 +8,7 @@
 \author{Sanyam Kapoor}
 
 \begin{document}
+
 \maketitle
 
 \section{Symbols}
@@ -41,6 +38,7 @@
 
 \vrb{\includesvg{}} may or may not work. Alternatively, convert to PDF which works reliably with Altair charts. See \cref{fig:svg_pdf}.
 
+% \begin{wrapfigure}{r}{0.6\textwidth}
 \begin{figure}[ht]
     \centering
     \begin{tabular}{cc}
@@ -49,7 +47,19 @@
     \end{tabular}
     \caption{SVG loaded from a (a) \texttt{.svg} file, and as a (b) \texttt{.pdf} file.}
     \label{fig:svg_pdf}
+\end{figure}    
+% \end{wrapfigure}
+
+\subsection{Image Placeholder}
+
+\begin{figure}[ht]
+    \centering
+    \includesvg[width=0.4\linewidth]{bayes}
+    \caption{The church of Bayes.}
+    \label{fig:placeholder}
 \end{figure}
+
+A placeholder is provided in \cref{fig:placeholder} for the waiting times until the graphs/plots are ready.
 
 \section{Equations, Citations, Figures}
 
@@ -73,7 +83,31 @@ Use \vrb{\kant[1]} to get,
 
 \kant[1]
 
-\clearpage
+\section{Simple Bayesian Network}
+
+See \cref{fig:bayes_net} for an example of a simple \emph{Bayesian network} for linear regression.
+
+\begin{figure}[ht]
+    \centering
+\begin{tikzpicture}
+    \node [obs] (y) at (0,0) {$y_i$};
+    \node [mark size=2pt,color=black,above=of y] (X) {$x_i$};
+    \node [mark size=2pt,color=black,below=of y] (theta) {$\mbf{\theta}$};
+    \node[circle,draw=black,fill=white,left=of y] (w) {$\bm{w}$};
+    \node [mark size=2pt,color=black,above=of w] (alpha) {$\alpha^2$};
+    \node [mark size=2pt,color=black,right=of y] (var) {$\sigma^2$};
+    
+    \path [draw,->] (theta) edge (y);
+    \path [draw,->] (X) edge (y);
+    \path [draw,->] (w) edge (y);
+    \path [draw,->] (var) edge (y);
+    \path [draw,->] (alpha) edge (w);
+
+    \plate [color=black] {obs_plate} {(X)(y)} {$N$};
+\end{tikzpicture}
+    \caption{A simple Bayesian network for linear regression.}
+    \label{fig:bayes_net}
+\end{figure}
 
 % \bibliographystyle{plainnat}
 \bibliography{refs}
