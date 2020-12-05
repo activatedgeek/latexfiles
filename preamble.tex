@@ -76,27 +76,33 @@
 \newenvironment{code}{\captionsetup{type=listing}}{}
 
 %% Symbols
-\newcommand{\reals}{\ensuremath{\mathbb{R}}}
-\newcommand{\naturals}{\ensuremath{\mathbb{N}}}
-\newcommand{\ints}{\ensuremath{\mathbb{Z}}}
-
-\newcommand{\mbf}[1]{{\ensuremath{\boldsymbol{\mathbf{#1}}}}}  % bold math
-\newcommand{\vrb}[1]{\Verb+#1+}  % verbatim
-
+\newcommand{\gp}{\ensuremath{\mathcal{GP}}}  % GP
+\newcommand{\kl}{\ensuremath{\mathcal{KL}}}  % KL-divergence
+\newcommand{\gaussian}[1]{\ensuremath{\mathcal{N}\left(#1\right)}}  % Gaussian
 \newcommand{\defeq}{\ensuremath{\triangleq}}  % definition
+
+% \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+% \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\newcommand{\ceil}[1]{\ensuremath{\left\lceil #1 \right\rceil}}
+\newcommand{\floor}[1]{\ensuremath{\left\lfloor #1 \right\rfloor}}
+
 \newcommand{\determ}[1]{\ensuremath{\left\lvert#1\right\rvert}}  % determinant
 \newcommand{\logdet}[1]{\ensuremath{\log{\determ{#1}}}}
 \newcommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}  % norm
 \newcommand{\ci}{\ensuremath{\mathrel{\perp\mspace{-10mu}\perp}}}  % conditional independence
 \newcommand{\nci}{\ensuremath{\cancel{\ci}}}  % conditional dependence
 
-\newcommand{\gp}{\ensuremath{\mathcal{GP}}}  % GP
-\newcommand{\kl}{\ensuremath{\mathcal{KL}}}  % KL-divergence
-\newcommand{\gaussian}[1]{\ensuremath{\mathcal{N}\left(#1\right)}}  % Gaussian
 \newcommand{\tr}[1]{\text{tr}\ensuremath{\left(#1\right)}}
 \newcommand{\pd}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
 
+%% Transforms
+\newcommand{\mbf}[1]{{\ensuremath{\boldsymbol{\mathbf{#1}}}}}  % bold math
+\newcommand{\vrb}[1]{\Verb+#1+}  % verbatim
+
 %% Variables
+\newcommand{\reals}{\ensuremath{\mathbb{R}}}  % real numbers
+\newcommand{\naturals}{\ensuremath{\mathbb{N}}}  % natural numbers
+\newcommand{\ints}{\ensuremath{\mathbb{Z}}}  % integers
 \newcommand{\dset}{\ensuremath{\mathcal{D}}}  % Dataset
 \newcommand{\xvec}{\mbf{x}}  % vector x
 \newcommand{\yvec}{\mbf{y}}  % vector y
