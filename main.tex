@@ -40,7 +40,7 @@
 \inputminted[firstline=1,lastline=2,fontsize=\small]{python}{test.py}
 \end{code}
 
-\section{SVGs}
+\section{Media}
 
 \vrb{\includesvg{}} may or may not work. Alternatively, convert to PDF which works reliably with Altair charts. See \cref{fig:svg_pdf}.
 
@@ -57,9 +57,21 @@
 \end{figure}    
 % \end{wrapfigure}
 
-\subsection{Image Placeholder}
+\subsection{Placeholders}
 
 A placeholder is provided in \cref{fig:svg_pdf}(c) for the waiting times until the graphs/plots are ready.
+
+\subsubsection{Example Images}
+
+\begin{figure}[!ht]
+\centering
+\begin{tabular}{cc}
+    \includegraphics[width=0.49\linewidth]{example-image-a} & \includegraphics[width=0.49\linewidth]{example-image-b} \\
+    (a)\vrb{\includegraphics{example-image-a}} & (b) \vrb{\includegraphics{example-image-a}}
+\end{tabular}
+\caption{Example images from built-in package.}
+\label{fig:my_label}
+\end{figure}
 
 \section{Equations, Citations, Figures}
 
