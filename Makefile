@@ -10,9 +10,8 @@ PWD := $(shell pwd)
 # 	@find . -type f -name "*.pdf" -exec mv {} $(DIST) \;
 
 all:
-	@mkdir -p public
 	@make main.pdf
-	@mv main.pdf public/
+	@mv main.pdf public/example.pdf
 
 %.pdf: %.tex
 	@cd $(dir $@) && $(PDFLATEX) $(PDFLATEXARGS) $(shell basename $^)
