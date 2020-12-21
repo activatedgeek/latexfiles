@@ -1,0 +1,14 @@
+name: Build-PDF
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: raabf/latex-versions:texlive2020
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Example PDF
+        run: |
+          ls
+          make all
