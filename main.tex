@@ -12,25 +12,36 @@
 
 \maketitle
 
-\section{Symbols}
+\section{Notations \& Variables}
 
-\begin{enumerate}%[label=(\alph*)]
-\item Reals \vrb{\reals}: \reals
-\item Naturals \vrb{\naturals}: \naturals
-\item Integers \vrb{\ints}: \ints
-\item Bold symbols \vrb{\mbf{}}: \mbf{\Sigma}, \mbf{X}, $\dots$
+\subsection{Notations}
+
+\begin{itemize}
+\item Gaussian Process \vrb{\gp{\cdot,\cdot}}: \gp{\cdot,\cdot}
+\item KL-divergence \vrb{\kl}: \kl
+\item Gaussian distribution \vrb{\gaussian{}}: \gaussian{\cdot, \cdot}
+\item Mean \vrb{\mean{\cdot}}: $\mean{\cdot}$
+\item Covariance \vrb{\cov{\cdor}}: $\cov{\cdot}$
 \item Definition \vrb{\defeq}: \defeq
+\item Big-O \vrb{\bigo{\cdot}}:  $\bigo{\cdot}$
+\item Ceiling \vrb{\ceil{\tfrac{n}{k}}}: $\ceil{\tfrac{n}{k}}$
+\item Floor \vrb{\floor{\tfrac{n}{k}}}: $\floor{\tfrac{n}{k}}$
 \item Determinant \vrb{\determ{}}: \determ{\cdot}
 \item logdet \vrb{\logdet{}}: \logdet{\cdot}
 \item Norm \vrb{\norm{}}: \norm{\cdot}
 \item Conditional independence \vrb{\ci},\vrb{\nci}: \ci, \nci
-\item Gaussian Process \vrb{\gp}: \gp
-\item KL-divergence \vrb{\kl}: \kl
-\item Gaussian distribution \vrb{\gaussian{}}: \gaussian{\cdot, \cdot}
 \item Trace \vrb{\tr{}}: \tr{\cdot}
 \item Partial derivative \vrb{\pd{}{}}: \pd{f}{x}(x)
-\item Ceiling \vrb{\ceil{\frac{n}{k}}}: $\ceil{\frac{n}{k}}$
-\item Floor \vrb{\floor{\frac{n}{k}}}: $\floor{\frac{n}{k}}$
+\end{itemize}
+
+\subsection{Variables}
+\begin{enumerate}%[label=(\alph*)]
+\item Bold math variables \vrb{\mbf{}}: \mbf{\Sigma}, \mbf{X},
+\item Reals \vrb{\reals}: \reals
+\item Naturals \vrb{\naturals}: \naturals
+\item Integers \vrb{\ints}: \ints
+\item Dataset \vrb{\dset}: \dset
+\item Inputs/Outputs \vrb{\xvec,\yvec,\fvec,\Xvec,\Yvec}: $\xvec,\yvec,\fvec,\Xvec,\Yvec$
 \end{enumerate}
 
 \section{Code Snippets}
