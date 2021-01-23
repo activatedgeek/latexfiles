@@ -2,6 +2,7 @@
 \ProvidesPackage{leaf}[2021 v0.1]
 
 \DeclareOption{algorithm2e}{\gdef\optalgorithm2e{1}}
+\DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
 \DeclareOption{ref}{\gdef\optref{1}}
 \ProcessOptions\relax
@@ -16,6 +17,7 @@
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
+\ifdefined\optauthblk \RequirePackage{authblk} \fi
 \RequirePackage{babel}
 \RequirePackage{bm}
 \RequirePackage{booktabs}
@@ -37,6 +39,7 @@
 \RequirePackage{subfigure}
 \RequirePackage{svg}
 \RequirePackage{tikz}
+\RequirePackage{url}
 \RequirePackage{verbatim}
 \RequirePackage{wrapfig}
 \RequirePackage{xcolor}
