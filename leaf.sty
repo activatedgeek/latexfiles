@@ -1,46 +1,58 @@
-%% Preemptively pass options to avoid import conflicts.
-\PassOptionsToPackage{linesnumbered,ruled,vlined}{algorithm2e}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{leaf}[2021 v0.1]
+
+\DeclareOption{algorithm2e}{\gdef\optalgorithm2e{1}}
+\DeclareOption{geometry}{\gdef\optgeometry{1}}
+\DeclareOption{ref}{\gdef\optref{1}}
+\ProcessOptions\relax
+
 \PassOptionsToPackage{english}{babel}
-\PassOptionsToPackage{capitalise,noabbrev}{cleveref}
-\PassOptionsToPackage{pdftex}{graphicx}
-\PassOptionsToPackage{pagebackref=true,bookmarks}{hyperref}
 \PassOptionsToPackage{utf8}{inputenc}
 \PassOptionsToPackage{newfloat}{minted}
-\PassOptionsToPackage{numbers,compress}{natbib}
-\PassOptionsToPackage{dvipsnames}{xcolor}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 
-\usepackage{adjustbox}
-\usepackage{algorithm2e}
-\usepackage{amsfonts}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{babel}
-\usepackage{bm}
-\usepackage{booktabs}
-\usepackage{cancel}
-\usepackage{caption}
-\usepackage{enumitem}
-\usepackage{etoolbox}
-\usepackage{fancyvrb}
-\usepackage{graphicx}
-\usepackage{inputenc}
-\usepackage{kantlipsum}
-\usepackage{listings}
-\usepackage{mathtools}
-\usepackage{microtype}
-\usepackage{minted}
-\usepackage{natbib}
-\usepackage{nicefrac}
-\usepackage{subfigure}
-\usepackage{svg}
-\usepackage{tikz}
-\usepackage{verbatim}
-\usepackage{wrapfig}
-\usepackage{xcolor}
+\RequirePackage{adjustbox}
+\ifdefined\optalgorithm2e \RequirePackage{algorithm2e} \fi
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{babel}
+\RequirePackage{bm}
+\RequirePackage{booktabs}
+\RequirePackage{cancel}
+\RequirePackage{caption}
+\RequirePackage{enumitem}
+\RequirePackage{etoolbox}
+\RequirePackage{fancyvrb}
+\ifdefined\optgeometry \RequirePackage{geometry} \fi
+\RequirePackage{graphicx}
+\RequirePackage{inputenc}
+\RequirePackage{kantlipsum}
+\RequirePackage{listings}
+\RequirePackage{mathtools}
+\RequirePackage{microtype}
+\RequirePackage{minted}
+\RequirePackage{natbib}
+\RequirePackage{nicefrac}
+\RequirePackage{subfigure}
+\RequirePackage{svg}
+\RequirePackage{tikz}
+\RequirePackage{verbatim}
+\RequirePackage{wrapfig}
+\RequirePackage{xcolor}
 
 %% Load these after everything else.
-\usepackage{hyperref}
+\ifdefined\optref
+\usepackage[bookmarks]{hyperref}
 \usepackage{cleveref}
+\fi
+
+%% Code
+\newenvironment{code}{\captionsetup{type=listing}}{}
+
+%% TikZ settings
+\usetikzlibrary{positioning,arrows.meta,quotes,shapes,bayesnet}
+% \tikzset{>=latex}
 
 %% Skip spacing around equation display (use inside document environment).
 \newcommand{\displayskip}[1]{
@@ -50,32 +62,9 @@
   \setlength{\belowdisplayshortskip}{#1}
 }
 
-%% TikZ settings
-\usetikzlibrary{positioning,arrows.meta,quotes,shapes,bayesnet}
-\tikzset{>=latex}
-
-%% Cleveref settings
-\crefname{equation}{}{}
-\Crefname{equation}{}{}
-
-%%
-% Conference specific toggles when needed.
-% Usage: \iftoggle{name}{true}{false}
-%
-\newtoggle{icml} \togglefalse{icml}
-\newtoggle{neurips} \togglefalse{neurips}
-\newtoggle{aistats} \togglefalse{aistats}
-
 %% Text highlights.
 \newcommand{\info}[1]{\textcolor{ForestGreen}{\textbf{#1}}}
 \newcommand{\warn}[1]{\textcolor{RedOrange}{\textbf{#1}}}
-
-%% natbib settings
-\renewcommand{\bibname}{References}
-\bibliographystyle{plainnat}
-
-%% Code
-\newenvironment{code}{\captionsetup{type=listing}}{}
 
 %% Transforms
 \newcommand{\mbf}[1]{{\ensuremath{\boldsymbol{\mathbf{#1}}}}}  % Bold Math

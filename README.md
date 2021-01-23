@@ -4,15 +4,10 @@ This is like [dotfiles](https://dotfiles.github.io) but for LaTeX.
 
 ## Usage Notes
 
-Simply include `preamble.tex` in the main file,
+Simply include `leaf.sty` package,
 
 ```
-\documentclass{article}
-
-\input{preamble}
-
-...
+\usepackage{leaf}
 ```
 
-**NOTE**: This should be included right after `\documentclass` to avoid package conflicts.
-
+See [main.tex](./main.tex) for example.
