@@ -1,13 +1,15 @@
 \documentclass[11pt]{article}
 
 %% Preemptively pass options to avoid import conflicts.
-\PassOptionsToPackage{linesnumbered,ruled,vlined}{algorithm2e}
+% \PassOptionsToPackage{linesnumbered,ruled,vlined}{algorithm2e}
 \PassOptionsToPackage{capitalise,noabbrev}{cleveref}
 \PassOptionsToPackage{margin=1in}{geometry}
 \PassOptionsToPackage{pagebackref=true}{hyperref}
 \PassOptionsToPackage{numbers,compress}{natbib}
 
 \usepackage[ref,geometry]{leaf}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
 %% Cleveref settings
 \crefname{equation}{}{}
@@ -149,6 +151,21 @@ See \cref{fig:bayes_net} for an example of a simple \emph{Bayesian network} for 
     \caption{A simple Bayesian network for linear regression.}
     \label{fig:bayes_net}
 \end{figure}
+
+\section{Algorithms}
+
+\begin{algorithm}
+\caption{Graduate student’s algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{GradSchool}{$s$}\Comment{Graduate school takes a student}
+   \State Select $\mathrm{shit}$ to work on
+   \While{$\mathrm{shit}$ does not work}
+      \State $\mathrm{grind}$
+   \EndWhile
+   \State \textbf{return} $\mathrm{shit}$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
 % \bibliographystyle{plainnat}
 \bibliography{refs}

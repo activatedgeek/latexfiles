@@ -1,7 +1,10 @@
+% LEAF
+%    for LaTeX version 2e
+% Copyright -- 2021 Sanyam Kapoor
+%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{leaf}[2021 v0.1]
 
-\DeclareOption{algorithm2e}{\gdef\optalgorithm2e{1}}
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
 \DeclareOption{ref}{\gdef\optref{1}}
@@ -13,7 +16,6 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 
 \RequirePackage{adjustbox}
-\ifdefined\optalgorithm2e \RequirePackage{algorithm2e} \fi
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -46,7 +48,10 @@
 
 %% Load these after everything else.
 \ifdefined\optref
-\usepackage[bookmarks]{hyperref}
+\PassOptionsToPackage{bookmarks,pagebackref=true}{hyperref}
+\PassOptionsToPackage{capitalise,noabbrev}{cleveref}
+
+\usepackage{hyperref}
 \usepackage{cleveref}
 \fi
 
@@ -64,6 +69,9 @@
   \setlength{\abovedisplayshortskip}{#1}
   \setlength{\belowdisplayshortskip}{#1}
 }
+
+%% Colors
+\definecolor{nyupurple}{RGB}{134, 0, 179}
 
 %% Text highlights.
 \newcommand{\info}[1]{\textcolor{ForestGreen}{\textbf{#1}}}
