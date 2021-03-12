@@ -1,13 +1,14 @@
-\documentclass[11pt]{article}
+\documentclass{article}
 
 %% Preemptively pass options to avoid import conflicts.
-% \PassOptionsToPackage{linesnumbered,ruled,vlined}{algorithm2e}
+\PassOptionsToPackage{linesnumbered,ruled,vlined}{algorithm2e}
 \PassOptionsToPackage{capitalise,noabbrev}{cleveref}
 \PassOptionsToPackage{margin=1in}{geometry}
 \PassOptionsToPackage{pagebackref=true}{hyperref}
 \PassOptionsToPackage{numbers,compress}{natbib}
 
-\usepackage[ref,geometry]{leaf}
+\usepackage[abbrvbib,nohyperref,preprint]{jmlr2e}
+\usepackage[ref]{leaf}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 
@@ -15,22 +16,32 @@
 \crefname{equation}{}{}
 \Crefname{equation}{}{}
 
-%% natbib settings
-\renewcommand{\bibname}{References}
-\bibliographystyle{plainnat}
+% Heading arguments are {volume}{year}{pages}{date submitted}{date published}{paper id}{author-full-names}
+%% \jmlrheading{}{}{}{}{}{}{}
 
-\setlength{\parindent}{0em}
-\setlength{\parskip}{1em}
+% Short headings should be running head and authors last names
+% \ShortHeadings{}{}
 
-\date{}
-\title{\textbf{Example \LaTeX{ }file}}
-\author{
-\textbf{Sanyam Kapoor} \\ New York University
-}
+\firstpageno{1}
 
 \begin{document}
 
+\title{Sample \LaTeX{ }file}
+
+\author{\name Sanyam Kapoor \email sanyam@nyu.edu \\
+       \addr Center for Data Science \\ New York University}
+
+% \editor{}
+
 \maketitle
+
+\begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
+This manuscript serves as a self-referencing documentation for the \texttt{leaf.sty} package \footnote{The package is available \href{https://github.com/activatedgeek/latexfiles}{here}.}.
+\end{abstract}
+
+\begin{keywords}
+  \LaTeX, Example, Mathematical Symbols
+\end{keywords}
 
 \section{Notations \& Variables}
 
@@ -167,7 +178,10 @@ See \cref{fig:bayes_net} for an example of a simple \emph{Bayesian network} for 
 \end{algorithmic}
 \end{algorithm}
 
-% \bibliographystyle{plainnat}
+\acks{
+This document is built upon the \emph{JMLR Style File} available at \href{https://github.com/JmlrOrg/jmlr-style-file}{this link}.
+}
+
 \bibliography{refs}
 
 \end{document}
