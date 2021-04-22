@@ -8,6 +8,7 @@
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
 \DeclareOption{ref}{\gdef\optref{1}}
+\DeclareOption{minted}{\gdef\optminted{1}}
 \ProcessOptions\relax
 
 \PassOptionsToPackage{english}{babel}
@@ -36,7 +37,7 @@
 \RequirePackage{listings}
 \RequirePackage{mathtools}
 \RequirePackage{microtype}
-\RequirePackage{minted}
+\ifdefined\optminted \RequirePackage{minted} \fi
 \RequirePackage{natbib}
 \RequirePackage{nicefrac}
 \RequirePackage{subfigure}
