@@ -79,23 +79,19 @@ This manuscript serves as a self-referencing documentation for the \texttt{leaf.
 \section{Code Snippets}
 
 \begin{code}
-\caption{Source code example} \label{code:sample}
-\inputminted[firstline=1,lastline=2,fontsize=\small]{python}{test.py}
+\caption{Compute the $n^{\mathrm{th}}$ Fibonacci number.} \label{code:sample}
+\inputminted[firstline=1,lastline=10,fontsize=\small]{python}{test.py}
 \end{code}
 
 \section{Media}
 
-\vrb{\includesvg{}} may or may not work. Alternatively, convert to PDF which works reliably with Altair charts. See \cref{fig:svg_pdf}.
+See \cref{fig:svg_pdf} to include PDF files..
 
 % \begin{wrapfigure}{r}{0.6\textwidth}
 \begin{figure}[ht]
     \centering
-    \begin{tabular}{ccc}
-        \includesvg[width=0.15\linewidth]{favicon} & \includegraphics[width=0.15\linewidth]{favicon.pdf} &
-        \includesvg[width=0.3\linewidth]{bayes} \\
-        (a) & (b) & (c)
-    \end{tabular}
-    \caption{SVG loaded from a (a) \texttt{.svg} file, and as a (b) \texttt{.pdf} file. (c) \emph{The Church of Bayes}. }
+	\includegraphics[width=0.15\linewidth]{favicon.pdf} 
+    \caption{SVG loaded from a \texttt{.pdf} file.}
     \label{fig:svg_pdf}
 \end{figure}    
 % \end{wrapfigure}
