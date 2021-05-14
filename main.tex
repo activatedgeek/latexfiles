@@ -8,7 +8,7 @@
 \PassOptionsToPackage{numbers,compress}{natbib}
 
 \usepackage[abbrvbib,nohyperref,preprint]{jmlr2e}
-\usepackage[ref,minted]{leaf}
+\usepackage[ref]{leaf}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 
@@ -49,40 +49,37 @@ This manuscript serves as a self-referencing documentation for the \texttt{leaf.
 \subsection{Notations}
 
 \begin{itemize}
-\item Gaussian Process \vrb{\gp{\cdot,\cdot}}: \gp{\cdot,\cdot}
-\item KL-divergence \vrb{\kl}: \kl
-\item Gaussian distribution \vrb{\gaussian{}}: \gaussian{\cdot, \cdot}
-\item Mean \vrb{\mean{\cdot}}: $\mean{\cdot}$
-\item Covariance \vrb{\cov{\cdor}}: $\cov{\cdot}$
-\item Definition \vrb{\defeq}: \defeq
-\item Big-O \vrb{\bigo{\cdot}}:  $\bigo{\cdot}$
-\item Ceiling \vrb{\ceil{\tfrac{n}{k}}}: $\ceil{\tfrac{n}{k}}$
-\item Floor \vrb{\floor{\tfrac{n}{k}}}: $\floor{\tfrac{n}{k}}$
-\item Determinant \vrb{\determ{}}: \determ{\cdot}
-\item logdet \vrb{\logdet{}}: \logdet{\cdot}
-\item Norm \vrb{\norm{}}: \norm{\cdot}
-\item Conditional independence \vrb{\ci},\vrb{\nci}: \ci, \nci
-\item Trace \vrb{\tr{}}: \tr{\cdot}
-\item Partial derivative \vrb{\pd{}{}}: \pd{f}{x}(x)
-\item Max/Min \vrb{\argmin, \argmax}: $\argmin$, $\argmax$
+\item Gaussian Process: \gp{\cdot,\cdot}
+\item KL-divergence: \kl
+\item Gaussian distribution: \gaussian{\cdot, \cdot}
+\item Mean: $\mean{\cdot}$
+\item Covariance: $\cov{\cdot}$
+\item Definition: \defeq
+\item Big-O:  $\bigo{\cdot}$
+\item Ceiling: $\ceil{\tfrac{n}{k}}$
+\item Floor: $\floor{\tfrac{n}{k}}$
+\item Determinant: \determ{\cdot}
+\item logdet: \logdet{\cdot}
+\item Norm: \norm{\cdot}
+\item Conditional independence: \ci, \nci
+\item Trace: \tr{\cdot}
+\item Partial derivative: \pd{f}{x}(x)
+\item Max or Min: $\argmin$, $\argmax$
 \end{itemize}
 
 \subsection{Variables}
 \begin{enumerate}%[label=(\alph*)]
-\item Bold math variables \vrb{\mbf{}}: \mbf{\Sigma}, \mbf{X},
-\item Reals \vrb{\reals}: \reals
-\item Naturals \vrb{\naturals}: \naturals
-\item Integers \vrb{\ints}: \ints
-\item Dataset \vrb{\dset}: \dset
-\item Inputs/Outputs \vrb{\xvec,\yvec,\fvec,\Xvec,\Yvec}: $\xvec,\yvec,\fvec,\Xvec,\Yvec$
+\item Bold math variables: \mbf{\Sigma}, \mbf{X},
+\item Reals: \reals
+\item Naturals: \naturals
+\item Integers: \ints
+\item Dataset: \dset
+\item Inputs/Outputs: $\xvec,\yvec,\fvec,\Xvec,\Yvec$
 \end{enumerate}
 
 \section{Code Snippets}
 
-\begin{code}
-\caption{Compute the $n^{\mathrm{th}}$ Fibonacci number.} \label{code:sample}
-\inputminted[firstline=1,lastline=10,fontsize=\small]{python}{test.py}
-\end{code}
+\lstinputlisting[language=Python,linerange={1-10},caption={Compute the $n^{\mathrm{th}}$ Fibonacci number.},label=code:sample]{test.py}
 
 \section{Media}
 
@@ -107,7 +104,7 @@ A placeholder is provided in \cref{fig:svg_pdf}(c) for the waiting times until t
 \centering
 \begin{tabular}{cc}
     \includegraphics[width=0.49\linewidth]{example-image-a} & \includegraphics[width=0.49\linewidth]{example-image-b} \\
-    (a)\vrb{\includegraphics{example-image-a}} & (b) \vrb{\includegraphics{example-image-a}}
+    (a) & (b)
 \end{tabular}
 \caption{Example images from built-in package.}
 \label{fig:my_label}
@@ -115,7 +112,7 @@ A placeholder is provided in \cref{fig:svg_pdf}(c) for the waiting times until t
 
 \section{Equations, Citations, Figures}
 
-References work with \vrb{\citet{vargp2020}}, rendered as \citet{vargp2020}.
+References are rendered as \citet{icml2021-vargp}.
 
 \begin{align}
 p(\theta \mid \xvec) = \frac{p(\xvec\mid\theta)p(\theta)}{p(\xvec)} \label{eq:bayesrule}
@@ -124,14 +121,14 @@ p(\theta \mid \xvec) = \frac{p(\xvec\mid\theta)p(\theta)}{p(\xvec)} \label{eq:ba
 Some clever reference examples using \texttt{Cleveref} package.
 
 \begin{enumerate}
-\item Equations \vrb{\cref{eq:bayesrule}}: \cref{eq:bayesrule}.
-\item Figures \vrb{\cref{fig:svg_pdf}}: \cref{fig:svg_pdf}.
-\item Code \vrb{\cref{code:sample}}: \cref{code:sample}.
+\item Equations: \cref{eq:bayesrule}.
+\item Figures: \cref{fig:svg_pdf}.
+\item Code: \cref{code:sample}.
 \end{enumerate}
 
 \section{Dummy text}
 
-Use \vrb{\kant[1-3]} to get multiple paragraphs. Or, just a single digit to get the specific pseudokantian paragraph.
+Get multiple pseudokantian paragraphs.
 
 \kant[1-3]
 
