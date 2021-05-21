@@ -3,11 +3,12 @@
 % Copyright -- 2021 Sanyam Kapoor
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{leaf}[2021 v0.2]
+\ProvidesPackage{leaf}[2021 v0.3]
 
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
 \DeclareOption{ref}{\gdef\optref{1}}
+\DeclareOption{caption}{\gdef\optcaption{1}}
 \ProcessOptions\relax
 
 \PassOptionsToPackage{english}{babel}
@@ -25,7 +26,7 @@
 \RequirePackage{bm}
 \RequirePackage{booktabs}
 \RequirePackage{cancel}
-\RequirePackage{caption}
+\ifdefined\optcaption \RequirePackage{caption} \fi
 \RequirePackage{enumitem}
 \RequirePackage{etoolbox}
 \RequirePackage{fancyvrb}
@@ -51,8 +52,13 @@
 \PassOptionsToPackage{bookmarks,pagebackref=true}{hyperref}
 \PassOptionsToPackage{capitalise,noabbrev}{cleveref}
 
-\usepackage{hyperref}
-\usepackage{cleveref}
+\RequirePackage{hyperref}
+\RequirePackage{cleveref}
+
+%% Cleveref settings
+\crefname{equation}{}{}
+\Crefname{equation}{}{}
+
 \fi
 
 %% Verbatim settings
