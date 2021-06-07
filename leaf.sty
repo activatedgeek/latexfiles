@@ -3,7 +3,7 @@
 % Copyright -- 2021 Sanyam Kapoor
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{leaf}[2021 v0.3]
+\ProvidesPackage{leaf}[2021 v0.4]
 
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
@@ -50,6 +50,8 @@
 %% Load these after everything else.
 \ifdefined\optref
 \PassOptionsToPackage{bookmarks,pagebackref=true}{hyperref}
+\PassOptionsToPackage{colorlinks=true,
+citecolor=denim,linkcolor=denim,urlcolor=cadmiumred}{hyperref}
 \PassOptionsToPackage{capitalise,noabbrev}{cleveref}
 
 \RequirePackage{hyperref}
@@ -85,6 +87,8 @@
 
 %% Colors
 \definecolor{nyupurple}{RGB}{134, 0, 179}
+\definecolor{denim}{rgb}{0.08, 0.38, 0.74}
+\definecolor{cadmiumred}{rgb}{0.89, 0.0, 0.13}
 
 %% Text highlights.
 \newcommand{\info}[1]{\textcolor{ForestGreen}{\textbf{#1}}}
