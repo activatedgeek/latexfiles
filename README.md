@@ -1,5 +1,7 @@
 # latexfiles
 
+![](https://github.com/activatedgeek/latexfiles/workflows/PDF/badge.svg)
+
 This is like [dotfiles](https://dotfiles.github.io) but for LaTeX.
 
 ## Usage Notes
