@@ -3,7 +3,7 @@
 % Copyright -- 2021 Sanyam Kapoor
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{leaf}[2021 v0.4]
+\ProvidesPackage{leaf}[2021 v0.4.1]
 
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
@@ -85,14 +85,26 @@ citecolor=denim,linkcolor=denim,urlcolor=cadmiumred}{hyperref}
   \setlength{\belowdisplayshortskip}{#1}
 }
 
-%% Colors
-\definecolor{nyupurple}{RGB}{134, 0, 179}
-\definecolor{denim}{rgb}{0.08, 0.38, 0.74}
+%% Colors (latexcolor.com)
 \definecolor{cadmiumred}{rgb}{0.89, 0.0, 0.13}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+\definecolor{cocoabrown}{rgb}{0.82, 0.41, 0.12}
+\definecolor{cornellred}{rgb}{0.7, 0.11, 0.11}
+\definecolor{denim}{rgb}{0.08, 0.38, 0.74}
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
+\definecolor{dimgray}{rgb}{0.41, 0.41, 0.41}
+\definecolor{flame}{rgb}{0.89, 0.35, 0.13}
+\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+\definecolor{hanpurple}{rgb}{0.32, 0.09, 0.98}
+\definecolor{indiagreen}{rgb}{0.07, 0.53, 0.03}
+\definecolor{internationalorange}{rgb}{1.0, 0.31, 0.0}
+\definecolor{nyupurple}{RGB}{134, 0, 179}
+\definecolor{selectiveyellow}{rgb}{1.0, 0.73, 0.0}
+\definecolor{teal}{rgb}{0.0, 0.5, 0.5}
 
 %% Text highlights.
-\newcommand{\info}[1]{\textcolor{ForestGreen}{\textbf{#1}}}
-\newcommand{\warn}[1]{\textcolor{RedOrange}{\textbf{#1}}}
+\newcommand{\info}[1]{\textcolor{indiagreen}{\textbf{INFO}: #1}}
+\newcommand{\warn}[1]{\textcolor{cadmiumred}{\textbf{WARN}: #1}}
 
 %% Transforms
 \newcommand{\mbf}[1]{{\ensuremath{\boldsymbol{\mathbf{#1}}}}}  % Bold Math
