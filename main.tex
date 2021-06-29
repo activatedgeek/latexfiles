@@ -2,7 +2,6 @@
 
 %% Preemptively pass options to avoid import conflicts.
 \PassOptionsToPackage{linesnumbered,ruled,vlined}{algorithm2e}
-\PassOptionsToPackage{margin=1in}{geometry}
 \PassOptionsToPackage{numbers,compress}{natbib}
 
 \usepackage[abbrvbib,nohyperref,preprint]{jmlr2e}
@@ -31,7 +30,7 @@
 \maketitle
 
 \begin{abstract}%   <- trailing '%' for backward compatibility of .sty file
-This manuscript serves as a self-referencing documentation for the \texttt{leaf.sty} package \footnote{The package is available \href{https://github.com/activatedgeek/latexfiles}{here}.}.
+This manuscript serves as a self-referencing documentation for the \texttt{leaf.sty} package\footnote{The package is available \href{https://github.com/activatedgeek/latexfiles}{here}.}.
 \end{abstract}
 
 % \begin{keywords}
@@ -75,6 +74,21 @@ This manuscript serves as a self-referencing documentation for the \texttt{leaf.
 
 \lstinputlisting[language=Python,linerange={1-10},caption={Compute the $n^{\mathrm{th}}$ Fibonacci number.},label=code:sample]{test.py}
 
+\section{Algorithms}
+
+\begin{algorithm}
+\caption{Graduate student’s algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{GradSchool}{$s$}\Comment{Graduate school takes a student}
+   \State Select $\mathrm{shit}$ to work on
+   \While{$\mathrm{shit}$ does not work}
+      \State $\mathrm{grind}$
+   \EndWhile
+   \State \textbf{return} $\mathrm{shit}$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
 \section{Media}
 
 See \cref{fig:svg_pdf} to include PDF files..
@@ -97,8 +111,8 @@ A placeholder is provided in \cref{fig:svg_pdf}(c) for the waiting times until t
 \begin{figure}[!ht]
 \centering
 \begin{tabular}{cc}
-    \includegraphics[width=0.49\linewidth]{example-image-a} & \includegraphics[width=0.49\linewidth]{example-image-b} \\
-    (a) & (b)
+    \includegraphics[width=0.4\linewidth]{example-image-a} & \includegraphics[width=0.4\linewidth]{example-image-b} \\
+    (a) \texttt{example-image-a} & (b) \texttt{example-image-b}
 \end{tabular}
 \caption{Example images from built-in package.}
 \label{fig:my_label}
@@ -124,13 +138,35 @@ Some clever reference examples using \texttt{Cleveref} package.
 
 Get multiple pseudokantian paragraphs.
 
-\kant[1-3]
+\kant[1-2]
+
+\subsection{Colors}
+
+A curated list of colors from \url{latexcolors.com}.
+
+\begin{itemize}
+	\item \textcolor{amber}{amber}
+	\item \textcolor{cadmiumred}{cadmiumred}
+	\item \textcolor{cadmiumgreen}{cadmiumgreen}
+	\item \textcolor{cocoabrown}{cocoabrown}
+	\item \textcolor{cornellred}{cornellred}
+	\item \textcolor{denim}{denim}
+	\item \textcolor{dimgray}{dimgray}
+	\item \textcolor{flame}{flame}
+	\item \textcolor{forestgreen}{forestgreen}
+	\item \textcolor{hanpurple}{hanpurple}
+	\item \textcolor{indiagreen}{indiagreen}
+	\item \textcolor{internationalorange}{internationalorange}
+	\item \textcolor{nyupurple}{nyupurple}
+	\item \textcolor{selectiveyellow}{selectiveyellow}
+	\item \textcolor{teal}{teal}
+\end{itemize}
 
 \section{Simple Bayesian Network}
 
 See \cref{fig:bayes_net} for an example of a simple \emph{Bayesian network} for linear regression.
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
     \centering
 \begin{tikzpicture}
     \node [obs] (y) at (0,0) {$y_i$};
@@ -152,24 +188,29 @@ See \cref{fig:bayes_net} for an example of a simple \emph{Bayesian network} for 
     \label{fig:bayes_net}
 \end{figure}
 
-\section{Algorithms}
+\section{Theorems, Propositions \& Proofs}
 
-\begin{algorithm}
-\caption{Graduate student’s algorithm}\label{euclid}
-\begin{algorithmic}[1]
-\Procedure{GradSchool}{$s$}\Comment{Graduate school takes a student}
-   \State Select $\mathrm{shit}$ to work on
-   \While{$\mathrm{shit}$ does not work}
-      \State $\mathrm{grind}$
-   \EndWhile
-   \State \textbf{return} $\mathrm{shit}$
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
+\begin{axiom}
+Bayes rocks.
+\end{axiom}
 
-\acks{
+
+\begin{restatable}[]{proposition}{exampleprop} \label{prop:exampleprop}
+This proposition is true.
+\end{restatable}
+
+The proposition can also be reproduced without being assigned a new number.
+
+\vdots
+
+\exampleprop*
+\begin{proof}
+Because I said so.	
+\end{proof}
+
+\section*{Acknowledgements}
+
 This document is built upon the \emph{JMLR Style File} available at \href{https://github.com/JmlrOrg/jmlr-style-file}{this link}.
-}
 
 \bibliography{references}
 

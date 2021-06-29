@@ -3,7 +3,7 @@
 % Copyright -- 2021 Sanyam Kapoor
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{leaf}[2021 v0.4.1]
+\ProvidesPackage{leaf}[2021 v0.5.0]
 
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
@@ -20,7 +20,7 @@
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
-% \RequirePackage{amsthm}
+\RequirePackage{amsthm}
 \ifdefined\optauthblk \RequirePackage{authblk} \fi
 \RequirePackage{babel}
 \RequirePackage{bm}
@@ -41,6 +41,8 @@
 \RequirePackage{natbib}
 \RequirePackage{nicefrac}
 \RequirePackage{subfigure}
+\RequirePackage{thmtools}
+\RequirePackage{thm-restate}
 \RequirePackage{tikz}
 \RequirePackage{url}
 \RequirePackage{verbatim}
@@ -62,6 +64,19 @@ citecolor=denim,linkcolor=denim,urlcolor=cadmiumred}{hyperref}
 \Crefname{equation}{}{}
 
 \fi
+
+%% Theorem related.
+\declaretheorem[]{example}
+\declaretheorem[]{theorem}
+\declaretheorem[sibling=theorem]{lemma}
+\declaretheorem[sibling=theorem]{proposition}
+\declaretheorem[sibling=theorem]{remark}
+\declaretheorem[sibling=theorem]{corollary}
+\declaretheorem[sibling=theorem]{definition}
+\declaretheorem[sibling=theorem]{conjecture}
+\declaretheorem[sibling=theorem]{axiom}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
 
 %% Verbatim settings
 \VerbatimFootnotes % enable use of \Verb in footnotes
@@ -86,12 +101,12 @@ citecolor=denim,linkcolor=denim,urlcolor=cadmiumred}{hyperref}
 }
 
 %% Colors (latexcolor.com)
+\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
 \definecolor{cadmiumred}{rgb}{0.89, 0.0, 0.13}
 \definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
 \definecolor{cocoabrown}{rgb}{0.82, 0.41, 0.12}
 \definecolor{cornellred}{rgb}{0.7, 0.11, 0.11}
 \definecolor{denim}{rgb}{0.08, 0.38, 0.74}
-\definecolor{amber}{rgb}{1.0, 0.49, 0.0}
 \definecolor{dimgray}{rgb}{0.41, 0.41, 0.41}
 \definecolor{flame}{rgb}{0.89, 0.35, 0.13}
 \definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
@@ -126,7 +141,7 @@ citecolor=denim,linkcolor=denim,urlcolor=cadmiumred}{hyperref}
 \newcommand{\norm}[1]{\ensuremath{\left\lVert#1\right\rVert}}  % norm
 \newcommand{\ci}{\ensuremath{\mathrel{\perp\mspace{-10mu}\perp}}}  % conditional independence
 \newcommand{\nci}{\ensuremath{\cancel{\ci}}}  % conditional dependence
-\newcommand{\tr}[1]{\text{tr}\ensuremath{\left(#1\right)}} % Trace
+\newcommand{\tr}[1]{\ensuremath{\mathrm{Tr}\left(#1\right)}} % Trace
 \newcommand{\pd}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}} % Partial Derivatives
 
 \DeclareMathOperator*{\argmin}{\arg\min}
