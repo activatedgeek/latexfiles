@@ -3,7 +3,7 @@
 % Copyright -- 2021 Sanyam Kapoor
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{leaf}[2021 v0.5.0]
+\ProvidesPackage{leaf}[2021 v0.5.1]
 
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
@@ -118,8 +118,8 @@ citecolor=denim,linkcolor=denim,urlcolor=cadmiumred}{hyperref}
 \definecolor{teal}{rgb}{0.0, 0.5, 0.5}
 
 %% Text highlights.
-\newcommand{\info}[1]{\textcolor{indiagreen}{\textbf{INFO}: #1}}
-\newcommand{\warn}[1]{\textcolor{cadmiumred}{\textbf{WARN}: #1}}
+\newcommand{\note}[1]{\textcolor{hanpurple}{\textbf{NOTE}: #1}}
+\newcommand{\warn}[1]{\textcolor{flame}{\textbf{WARN}: #1}}
 
 %% Transforms
 \newcommand{\mbf}[1]{{\ensuremath{\boldsymbol{\mathbf{#1}}}}}  % Bold Math
