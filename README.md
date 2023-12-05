@@ -1,6 +1,6 @@
 # latexfiles
 
-![](https://github.com/activatedgeek/latexfiles/workflows/PDF/badge.svg)
+![](https://github.com/activatedgeek/latexfiles/workflows/Pages/badge.svg)
 
 This is like [dotfiles](https://dotfiles.github.io) but for LaTeX.
 
