@@ -3,19 +3,22 @@
 % Copyright -- 2023 Sanyam Kapoor
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{leaf}[2023 v0.7.0]
+\ProvidesPackage{leaf}[2023 v0.9.0]
 
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
 \DeclareOption{ref}{\gdef\optref{1}}
 \DeclareOption{caption}{\gdef\optcaption{1}}
 \DeclareOption{algorithm}{\gdef\optalgorithm{1}}
+\DeclareOption{microtype}{\gdef\optmicrotype{1}}
 \ProcessOptions\relax
 
 \PassOptionsToPackage{english}{babel}
 \PassOptionsToPackage{utf8}{inputenc}
+\PassOptionsToPackage{T1}{fontenc}
 %\PassOptionsToPackage{newfloat}{minted}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
+\PassOptionsToPackage{shortlabels}{enumitem}
 
 \RequirePackage{adjustbox}
 \ifdefined\optalgorithm \RequirePackage{algorithm2e} \fi
@@ -32,13 +35,17 @@
 \RequirePackage{enumitem}
 \RequirePackage{etoolbox}
 \RequirePackage{fancyvrb}
+\RequirePackage{fontenc}
 \ifdefined\optgeometry \RequirePackage{geometry} \fi
 \RequirePackage{graphicx}
+% \RequirePackage{inconsolata}
 \RequirePackage{inputenc}
 \RequirePackage{kantlipsum}
+\RequirePackage{latexsym}
 \RequirePackage{listings}
 \RequirePackage{mathtools}
-%\RequirePackage{microtype}
+\RequirePackage{multirow}
+\ifdefined\optmicrotype \RequirePackage{microtype} \fi
 %\ifdefined\optminted \RequirePackage{minted} \fi
 \RequirePackage{natbib}
 \RequirePackage{nicefrac}
@@ -47,6 +54,7 @@
 \RequirePackage{subcaption}
 \RequirePackage{thmtools}
 \RequirePackage{thm-restate}
+\RequirePackage{times}
 \RequirePackage{tikz}
 \RequirePackage{url}
 \RequirePackage{verbatim}
@@ -151,8 +159,8 @@ citecolor=coolblack,linkcolor=coolblack,urlcolor=denim}{hyperref}
 \newcommand{\tr}[1]{\ensuremath{\mathrm{Tr}\left(#1\right)}} % Trace
 \newcommand{\pd}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}} % Partial Derivatives
 
-\DeclareMathOperator*{\argmax}{arg\,max}
-\DeclareMathOperator*{\argmin}{arg\,min}
+% \DeclareMathOperator*{\argmax}{arg\,max}
+% \DeclareMathOperator*{\argmin}{arg\,min}
 
 %% Variables
 \newcommand{\reals}{\ensuremath{\mathbb{R}}}  % Real Numbers
