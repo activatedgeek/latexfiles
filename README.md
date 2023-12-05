@@ -12,4 +12,4 @@ Simply include `leaf.sty` package,
 \usepackage{leaf}
 ```
 
-See [main.tex](./main.tex) for example.
+See [example.tex](./example.tex) for more.
