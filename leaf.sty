@@ -1,9 +1,9 @@
 % LEAF
 %    for LaTeX version 2e
-% Copyright -- 2023 Sanyam Kapoor
+% Copyright -- 2024 Sanyam Kapoor
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{leaf}[2023 v0.8.0]
+\ProvidesPackage{leaf}[2024 v0.9.0]
 
 \DeclareOption{authblk}{\gdef\optauthblk{1}}
 \DeclareOption{geometry}{\gdef\optgeometry{1}}
@@ -14,10 +14,11 @@
 \ProcessOptions\relax
 
 \PassOptionsToPackage{linesnumbered,ruled}{algorithm2e}
+\PassOptionsToPackage{toc,page,header}{appendix}
 \PassOptionsToPackage{english}{babel}
 \PassOptionsToPackage{utf8}{inputenc}
 \PassOptionsToPackage{T1}{fontenc}
-%\PassOptionsToPackage{newfloat}{minted}
+\PassOptionsToPackage{newfloat}{minted}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names,table}{xcolor}
 \PassOptionsToPackage{shortlabels}{enumitem}
 
@@ -27,6 +28,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsthm}
+\RequirePackage{appendix}
 \ifdefined\optauthblk \RequirePackage{authblk} \fi
 \RequirePackage{babel}
 \RequirePackage{bm}
@@ -44,15 +46,18 @@
 \RequirePackage{kantlipsum}
 \RequirePackage{latexsym}
 \RequirePackage{listings}
+\RequirePackage{makecell}
 \RequirePackage{mathtools}
+\RequirePackage{minitoc}
 \RequirePackage{multirow}
 \ifdefined\optmicrotype \RequirePackage{microtype} \fi
-%\ifdefined\optminted \RequirePackage{minted} \fi
+\ifdefined\optminted \RequirePackage{minted} \fi
 \RequirePackage{natbib}
 \RequirePackage{nicefrac}
 \RequirePackage{pifont}
 \RequirePackage{soul}
 \RequirePackage{subcaption}
+\RequirePackage{tcolorbox}
 \RequirePackage{thmtools}
 \RequirePackage{thm-restate}
 \RequirePackage{times}
@@ -67,7 +72,7 @@
 \PassOptionsToPackage{bookmarks,pagebackref=true}{hyperref}
 \PassOptionsToPackage{colorlinks=true,
 citecolor=coolblack,linkcolor=coolblack,urlcolor=denim}{hyperref}
-\PassOptionsToPackage{capitalise,noabbrev}{cleveref}
+\PassOptionsToPackage{nameinlink,capitalise,noabbrev}{cleveref}
 
 \RequirePackage{hyperref}
 \RequirePackage{cleveref}
@@ -75,7 +80,9 @@ citecolor=coolblack,linkcolor=coolblack,urlcolor=denim}{hyperref}
 %% Cleveref settings
 \crefname{equation}{Eq.}{Eqs.}
 \Crefname{equation}{Eq.}{Eqs.}
-% \creflabelformat{equation}{Eq. #2 (#1) #3}
+
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
 
 \fi
 
@@ -89,6 +96,7 @@ citecolor=coolblack,linkcolor=coolblack,urlcolor=denim}{hyperref}
 \declaretheorem[sibling=theorem]{definition}
 \declaretheorem[sibling=theorem]{conjecture}
 \declaretheorem[sibling=theorem]{axiom}
+\declaretheorem[sibling=theorem]{assumption}
 
 \renewcommand{\qedsymbol}{$\blacksquare$}
 
@@ -134,8 +142,9 @@ citecolor=coolblack,linkcolor=coolblack,urlcolor=denim}{hyperref}
 \definecolor{teal}{rgb}{0.0, 0.5, 0.5}
 
 %% Text highlights.
-\newcommand{\note}[1]{\textcolor{hanpurple}{\textbf{NOTE}: #1}}
-\newcommand{\warn}[1]{\textcolor{flame}{\textbf{WARN}: #1}}
+\newcommand{\note}[1]{\textcolor{hanpurple}{#1}}
+\newcommand{\warn}[1]{\textcolor{flame}{#1}}
+\newcommand{\todo}[1]{\warn{\textbf{TODO}: {#1}}}
 
 %% Transforms
 \newcommand{\mbf}[1]{{\ensuremath{\boldsymbol{\mathbf{#1}}}}}  % Bold Math
